@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - verto_app</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/verto_app.styles.css" asp-append-version="true" />
+</head>
+
+<!--BODY-->
+<body>
+    <header>
+        <div class="row top" data-equalizer="" data-equalizer-mq="medium-down">
+            <div class="column small-6 large-8" data-equalizer-watch="" style="position: relative; height: 45px;">
+                <a href="/" title="Opticron"><img src="\lib\img\header-logo.png" alt="Opticron logo" style="display: block;"></a>
+            </div>
+        </div>
+
+        <ul class="dropdown menu" data-dropdown-menu>
+            <li><a href="#" data-dropdown="our-products">Products</a></li>
+            <li><a href="#" data-dropdown="news-reviews">News &amp; Reviews</a></li>
+            <li><a href="#" data-dropdown="help-support">Support</a></li>
+            <li><a href="#" data-dropdown="my-opticron">My opticron</a></li>
+            </div>
+            <a id="lnkBasketIcon" href="/my-opticron/basket" style="color: #777; font-size: 24px;"><img id="imgBasket" src="\lib\img\header-basket.png" style="vertical-align: top; margin-top: 2px;"></a>
+            </div>
+            <div class="column small-12 large-3">
+                <div id="pnlSearch" class="search-wrapper basket" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'btnSearch')">
+                    <input name="ctl00$txtSearch" type="text" id="txtSearch">
+                    <a id="btnSearch" href="javascript:__doPostBack('ctl00$btnSearch','')"><i class="btb bt-search"></i></a>
+                </div>
+            </div>
+        </ul>
+    </header>
+    
+    <section>
+        <div class="row-cols-4">
+            <div class="col-sm-4">
+
+                <div class="card" style="width:120px;">
+                    <div class="card-divider">
+                        New Products
+                    </div>
+                    <img src="\lib\img\Eagle.png">
+                    <div class="card-section">
+                        <p>Lorem ipsum text paragraph</p>
+                        <a href="newproducts.html" class="button">New Products</a>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 120px;">
+                    <div class="card-divider">
+                        Field Events
+                    </div>
+                    <img src="\lib\img\People.png">
+                    <div class="card-section">
+                        <p>Lorem ipsum text paragraph</p>
+                        <a href="events.html" class="button">View Events</a>
+
+                    </div>
+                </div>
+
+                <div class="card" style="width: 120px;">
+                    <div class="card-divider">
+                        Latest News
+                    </div>
+                    <img src="\lib\img\valley.png">
+                    <div class="card-section">
+                        <p>Lorem ipsum text paragraph</p>
+                        <a href="news.html" class="button">Read Article</a>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 120px;">
+                    <div class="card-divider">
+                        Gallery
+                    </div>
+                    <img src="\lib\img\bluetit.png">
+                    <div class="card-section">
+                        <p>Lorem ipsum text paragraph</p>
+                        <a href="gallery.html" class="button">View Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <!--FOOTER-->
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Med1cated1/M.Charles - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+
+    <!--JS.SCRIPTS-->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
