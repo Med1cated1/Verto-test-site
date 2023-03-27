@@ -7,39 +7,92 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/verto_app.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <!--BODY-->
 <body>
     <header>
-        <div class="row top" data-equalizer="" data-equalizer-mq="medium-down">
-            <div class="column small-6 large-8" data-equalizer-watch="" style="position: relative; height: 45px;">
-                <a href="/" title="Opticron"><img src="\lib\img\header-logo.png" alt="Opticron logo" style="display: block;"></a>
+        
+         <div class="column small-6 large-8" data-equalizer-watch="" style="position: relative; height: 45px;">
+            <a href="/" title="Opticron"><img src="\lib\img\header-logo.png" alt="Opticron logo" /></a>
+        </div>
+        
+        <nav>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="products" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Our Products
+            </button>
+            <div class="dropdown-menu" aria-labelledby="products">
+                <a class="dropdown-item" href="#">Products</a>
+            </div>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="products" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Where to buy
+            </button>
+            <div class="dropdown-menu" aria-labelledby="products">
+                <a class="dropdown-item" href="#">Stores and stockists</a>
+            </div>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="products" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                News &amp; Reviews
+            </button>
+            <div class="dropdown-menu" aria-labelledby="products">
+                <a class="dropdown-item" href="#">News Articles</a>
+                <a class="dropdown-item" href="#">Reviews </a>
+            </div>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="products" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Help &amp; Support
+            </button>
+            <div class="dropdown-menu" aria-labelledby="products">
+                <a class="dropdown-item" href="#">Help</a>
+                <a class="dropdown-item" href="#">Support</a>
+            </div>
+            <div>
+            <a id="lnkBasketIcon" href="/my-opticron/basket" style="color: #777; font-size: 20px;"><img id="imgBasket" src="\lib\img\header-basket.png" style="vertical-align: top;"></a>
+            </div>
+
+            <div class="search-container">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
             </div>
         </div>
+        </nav>
+     </header>
 
-        <ul class="dropdown menu" data-dropdown-menu>
-            <li><a href="#" data-dropdown="our-products">Products</a></li>
-            <li><a href="#" data-dropdown="news-reviews">News &amp; Reviews</a></li>
-            <li><a href="#" data-dropdown="help-support">Support</a></li>
-            <li><a href="#" data-dropdown="my-opticron">My opticron</a></li>
+ <section>
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                
             </div>
-            <a id="lnkBasketIcon" href="/my-opticron/basket" style="color: #777; font-size: 24px;"><img id="imgBasket" src="\lib\img\header-basket.png" style="vertical-align: top; margin-top: 2px;"></a>
-            </div>
-            <div class="column small-12 large-3">
-                <div id="pnlSearch" class="search-wrapper basket" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'btnSearch')">
-                    <input name="ctl00$txtSearch" type="text" id="txtSearch">
-                    <a id="btnSearch" href="javascript:__doPostBack('ctl00$btnSearch','')"><i class="btb bt-search"></i></a>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/lib/img/carousel/banner.png" class="d-block w-100" alt="..." />
                 </div>
+                <div class="carousel-item">
+                    <img src="~/lib/img/carousel/banner.png" class="d-block w-100" alt="..." />
+                </div>
+              
             </div>
-        </ul>
-    </header>
-    
-    <section>
-        <div class="row-cols-4">
-            <div class="col-sm-4">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+ </section>  
 
-                <div class="card" style="width:120px;">
+ <section>
+        <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                <div class="card" style="width:13rem;">
                     <div class="card-divider">
                         New Products
                     </div>
@@ -49,8 +102,10 @@
                         <a href="newproducts.html" class="button">New Products</a>
                     </div>
                 </div>
+              </div>
 
-                <div class="card" style="width: 120px;">
+              <div class="col">
+                <div class="card" style="width: 13rem;">
                     <div class="card-divider">
                         Field Events
                     </div>
@@ -58,11 +113,12 @@
                     <div class="card-section">
                         <p>Lorem ipsum text paragraph</p>
                         <a href="events.html" class="button">View Events</a>
-
                     </div>
                 </div>
+              </div>
 
-                <div class="card" style="width: 120px;">
+              <div class="col">
+                <div class="card" style="width: 13rem;">
                     <div class="card-divider">
                         Latest News
                     </div>
@@ -72,8 +128,10 @@
                         <a href="news.html" class="button">Read Article</a>
                     </div>
                 </div>
+              </div>
 
-                <div class="card" style="width: 120px;">
+              <div class="col">
+                <div class="card" style="width: 13rem;">
                     <div class="card-divider">
                         Gallery
                     </div>
@@ -83,9 +141,27 @@
                         <a href="gallery.html" class="button">View Gallery</a>
                     </div>
                 </div>
+                </div>
             </div>
         </div>
     </section>
+
+
+    <div class="container text-center">
+        <p>Special Offers</p>
+        <div class="row">
+            <div class="col">
+                <img src="~/lib/img/cashback.png" />
+            </div>
+            <div class="col">
+                <img src="~/lib/img/olympus.png" /> 
+            </div>
+            <div class="col">
+                <img src="~/lib/img/scope.png" /> 
+            </div>
+        </div>
+    </div>
+
 
     
     <div class="container">
